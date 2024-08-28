@@ -10,7 +10,7 @@ details: |
   check_ndpi_detection_func
   ndpi_check_flow_func
   ```
-modified: '2023-06-22T14:02:08.577062Z'
+modified: '2023-10-23T14:16:27.982449Z'
 published: '2023-06-22T14:02:08.576791Z'
 references:
 - type: REPORT
@@ -25,7 +25,10 @@ affected:
     repo: https://github.com/ntop/nDPI.git
     events:
     - introduced: 66bee475ae1b1f4b1b4104555b7bb4d38c3e20b6
+    - fixed: 8dbd591053274fc1faddc1eff355fda9f5ad79a5
   ecosystem_specific:
     severity: HIGH
+  database_specific:
+    fixed_range: 04be3080921507b69899d01bc79be86181e6f536:8dbd591053274fc1faddc1eff355fda9f5ad79a5
   versions: []
 schema_version: 1.4.0

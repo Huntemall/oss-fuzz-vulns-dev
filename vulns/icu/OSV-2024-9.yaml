@@ -1,0 +1,34 @@
+id: OSV-2024-9
+summary: Stack-buffer-overflow in _canonicalize
+details: |
+  OSS-Fuzz report: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65635
+
+  ```
+  Crash type: Stack-buffer-overflow READ {*}
+  Crash state:
+  _canonicalize
+  ulocimp_getBaseName_75
+  ures_openWithType
+  ```
+modified: '2024-04-16T15:44:42.424488Z'
+published: '2024-01-11T00:04:20.734197Z'
+references:
+- type: REPORT
+  url: https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=65635
+affected:
+- package:
+    name: icu
+    ecosystem: OSS-Fuzz
+    purl: pkg:generic/icu
+  ranges:
+  - type: GIT
+    repo: https://github.com/unicode-org/icu.git
+    events:
+    - introduced: cfba9a8caf6cb6ab39eb4ca5702c78f97989bcde
+    - fixed: 87ca0234476c62f7d42ab43bb4f5e17ca329f5d0
+  ecosystem_specific:
+    severity: MEDIUM
+  database_specific:
+    fixed_range: 3f054adaf3ca34d55338e56773088bd589600583:87ca0234476c62f7d42ab43bb4f5e17ca329f5d0
+  versions: []
+schema_version: 1.6.0
